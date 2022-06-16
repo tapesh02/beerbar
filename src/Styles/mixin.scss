@@ -1,0 +1,26 @@
+@mixin flex-column-center($width, $height, $justifyContent, $alignItems) {
+    display: flex;
+    flex-direction: column;
+    width: $width;
+    height: $height;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin flex-row-center($width, $height, $justifyContent, $alignItems) {
+    display: flex;
+    width: $width;
+    height: $height;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin btn {
+    background-color: $silkWhite;
+    @content;
+
+    &:hover {
+        background-color: $greenSeaweed;
+        color: $greenQueen;
+    }
+}

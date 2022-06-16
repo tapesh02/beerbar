@@ -1,0 +1,67 @@
+//searchComp
+.main-searchbar {
+    @include flex-row-center(80%, 3rem, center, center);
+    border-radius: 5px;
+    margin: 0% 10%;
+    margin-top: 1rem;
+    box-shadow: 2px 3px 3px rgb(211, 211, 211);
+    background-color: $silkWhite;
+    padding: 0rem 0.5rem;
+
+    &:focus,
+    &:focus-within {
+        outline: 0.1px solid rgb(211, 211, 211);
+    }
+
+    .searchbarinput {
+        width: 100%;
+        height: 3rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        font-size: 1.2rem;
+        border: none;
+        cursor: pointer;
+        &:focus,
+        &:focus-within {
+            outline: none;
+        }
+    }
+
+    .searchicon,
+    .addicon {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: rgb(209, 209, 209);
+    }
+    .addicon {
+        padding-left: 1rem;
+    }
+}
+
+//singleFindbeerCard
+
+.main-beer-card {
+    &:hover {
+        box-shadow: 5px 3px 5px gray;
+        transition: all 1s ease-in-out;
+        transform: scale(1.01);
+    }
+
+    .cardContent {
+        .cardTitle {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+    .cardBtn {
+        background-color: $fantascticRed;
+        color: $silkWhite;
+
+        &:hover {
+            color: $fantascticRed;
+            background-color: $silkWhite;
+        }
+    }
+}

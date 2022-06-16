@@ -1,0 +1,71 @@
+.main-home {
+    background-image: url("https://cdn.pixabay.com/photo/2013/10/23/09/04/beer-199650_1280.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    .homeHeader {
+        font-family: $fontFamily;
+        position: fixed;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $silkWhite;
+        text-transform: capitalize;
+        backdrop-filter: blur(5px);
+
+        .header {
+            z-index: 2;
+            text-align: center;
+            animation: blink 5s infinite;
+
+            @keyframes blink {
+                0% {
+                    text-shadow: (white 0 0 12px, $fantascticRed 0 0 24px, $fantascticRed 0 0 36px);
+                }
+
+                39% {
+                    text-shadow: (white 0 0 12px, $fantascticRed 0 0 24px, $fantascticRed 0 0 36px);
+                }
+                40% {
+                    text-shadow: none;
+                }
+                41% {
+                    text-shadow: (white 0 0 12px, $fantascticRed 0 0 24px, $fantascticRed 0 0 36px);
+                }
+
+                59% {
+                    text-shadow: (white 0 0 12px, $fantascticRed 0 0 24px, $fantascticRed 0 0 36px);
+                }
+                60% {
+                    text-shadow: none;
+                }
+                100% {
+                    text-shadow: (white 0 0 12px, #ff3aad 0 0 24px, ff3aad 0 0 36px);
+                }
+            }
+
+            @include mobile {
+                font-size: 3rem;
+            }
+        }
+        .subheader {
+            text-transform: lowercase;
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+
+        .findBtn {
+            margin-top: 2rem;
+            &:hover {
+                background-color: $fantascticRed;
+                color: $silkWhite;
+            }
+        }
+    }
+}
