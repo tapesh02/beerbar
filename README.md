@@ -13,7 +13,7 @@ You can check the working demo of the wesbite [here](https://beerbar.web.app/).
 
 A snapshot of the landing/home page
 
-![Screenshot](//src/assets/Screenshot.png)
+![Screenshot](/src/assets/Screenshot.png)
 
 ### `npm start`
 
