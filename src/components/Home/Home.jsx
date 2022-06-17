@@ -1,7 +1,14 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Box, Container, Typography, Button } from "@material-ui/core";
+
 const Home = () => {
+    const navigate = useNavigate();
+    const gotoFindbeers = () => {
+        navigate("/findbeer");
+    };
     return (
         <>
             <Box>
@@ -14,7 +21,7 @@ const Home = () => {
                         <Typography color="inherit" className="subheader" variant="h6">
                             A better beer deserves a better can. It's all about the beer. Lager Beer at its Best. How refreshing!
                         </Typography>
-                        <Button variant="contained" className="findBtn">
+                        <Button variant="contained" className="findBtn" onClick={gotoFindbeers}>
                             find here
                         </Button>
                     </Container>

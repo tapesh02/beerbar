@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
-import { AppBar, Toolbar, Box, makeStyles } from "@material-ui/core";
+import { AppBar, Toolbar, Box, makeStyles, Badge } from "@material-ui/core";
 
 import Logo from "../Logo/Logo";
+
+import { GlobalContext } from "../../context/Context";
 
 const useStyles = makeStyles((theme) => ({
     showDesktop: {
@@ -16,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
 
 const DesktopNav = () => {
     const classes = useStyles();
+    const { totalFavItems } = useContext(GlobalContext);
+
     return (
         <>
             <AppBar position="static" color="transparent" elevation={0} className={classes.showDesktop}>
@@ -30,9 +34,19 @@ const DesktopNav = () => {
                         <NavLink to="/findbeer" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
                             Find Beer
                         </NavLink>
-                        <NavLink to="/favourite" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
-                            Favourite
-                        </NavLink>
+
+                        <Badge
+                            badgeContent={totalFavItems}
+                            color="secondary"
+                            anchorOrigin={{
+                                vertical: "top",
+                                horizontal: "right",
+                            }}>
+                            <NavLink to="/favourite" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
+                                Favourite
+                            </NavLink>
+                        </Badge>
+
                         <NavLink to="/about" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
                             About
                         </NavLink>

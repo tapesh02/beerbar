@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# Getting Started with BeerBar React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+This git repository does not include any node module or packages. Hence when you clone this repository please follow the below neccessary steps:
+
+1. run command `npm install`
+2. now run `npm start`
+   You can check the working demo of the wesbite here.
+
+A snapshot of the landing/home page
+
+![Screenshot]("../../src/assets/Screenshot.png")
 
 ### `npm start`
 

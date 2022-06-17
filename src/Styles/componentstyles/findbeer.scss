@@ -38,6 +38,12 @@
     }
 }
 
+.notFoundtext {
+    text-align: center;
+    padding: 2rem;
+    font-family: $fontFamily;
+}
+
 //singleFindbeerCard
 
 .main-beer-card {
@@ -47,6 +53,10 @@
         transform: scale(1.01);
     }
 
+    .beerCardImg {
+        object-fit: contain;
+        padding: 1rem;
+    }
     .cardContent {
         .cardTitle {
             text-overflow: ellipsis;
@@ -58,6 +68,7 @@
     .cardBtn {
         background-color: $fantascticRed;
         color: $silkWhite;
+        width: 100%;
 
         &:hover {
             color: $fantascticRed;

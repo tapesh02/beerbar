@@ -1,0 +1,27 @@
+.main-error {
+    background-image: linear-gradient(to bottom, #000000, #41111e, #7f0e2b, #c0002e, #ff0622);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 64px);
+    align-items: center;
+    justify-content: space-around;
+
+    .errorTitle {
+        color: $silkWhite;
+        padding: 1.5rem;
+    }
+
+    .homebtn {
+        margin-top: 1rem;
+        background-color: $silkWhite;
+
+        &:hover {
+            background-color: $fantascticRed;
+            color: $silkWhite;
+        }
+    }
+}

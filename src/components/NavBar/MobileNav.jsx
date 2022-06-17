@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { GlobalContext } from "../../context/Context";
 
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { AppBar, Backdrop, CssBaseline, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, Box } from "@material-ui/core";
+import { AppBar, Backdrop, CssBaseline, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, Box, Badge } from "@material-ui/core";
 
 import { Home, MenuOpen, ListAlt, AccountCircle, ChevronRight, ChevronLeft, Twitter, Facebook, LinkedIn, Copyright, ExitToApp, PersonAdd } from "@material-ui/icons";
 
@@ -83,6 +84,7 @@ const MobileNav = () => {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
+    const { totalFavItems } = useContext(GlobalContext);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -154,9 +156,17 @@ const MobileNav = () => {
                                 <ListItemIcon>
                                     <PersonAdd fontSize="large" style={{ color: "white" }} />
                                 </ListItemIcon>
-                                <NavLink to="/favourite" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
-                                    <ListItemText primary="Favourite" />
-                                </NavLink>
+                                <Badge
+                                    badgeContent={totalFavItems}
+                                    color="secondary"
+                                    anchorOrigin={{
+                                        vertical: "top",
+                                        horizontal: "right",
+                                    }}>
+                                    <NavLink to="/favourite" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
+                                        <ListItemText primary="Favourite" />
+                                    </NavLink>
+                                </Badge>
                             </ListItem>
                             <ListItem>
                                 <ListItemIcon>

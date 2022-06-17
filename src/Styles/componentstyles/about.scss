@@ -1,0 +1,55 @@
+.main-about {
+    @include flex-row-center(100%, 85vh, center, center);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    gap: 2rem;
+
+    @include mobile {
+        flex-direction: column;
+        height: auto;
+        padding: 0.2rem;
+    }
+
+    .main-aboutImage {
+        width: 45vw;
+        height: 65%;
+        margin-bottom: 5rem;
+
+        @include mobile {
+            height: auto;
+            width: auto;
+            padding: 2rem;
+        }
+        img {
+            box-shadow: rgba(15, 14, 14, 0.4) -5px 5px, rgba(80, 67, 75, 0.3) -10px 10px, rgba(209, 173, 168, 0.2) -15px 15px, rgba(248, 29, 0, 0.1) -20px 20px, rgba(240, 46, 46, 0.05) -25px 25px;
+        }
+    }
+
+    .main-aboutDesc {
+        @include flex-column-center(50vw, 70%, center, flex-start);
+        background-image: linear-gradient(to right, #181616, #4b1e20, #7f2026, #b41c28, #eb1224);
+        padding: 2rem;
+        gap: 1rem;
+        color: white;
+
+        @include mobile {
+            width: 100%;
+        }
+        h2 {
+            font-family: $fontFamily;
+        }
+        h6 {
+            letter-spacing: 0.08rem;
+            word-spacing: 0.1rem;
+            text-align: justify;
+        }
+        .moreBtn {
+            background-color: $silkWhite;
+            color: $fantascticRed;
+            &:hover {
+                color: $silkWhite;
+                background-color: $fantascticRed;
+            }
+        }
+    }
+}

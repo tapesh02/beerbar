@@ -1,0 +1,6 @@
+//FavouriteComp
+.noItemText {
+    @include flex-row-center(100%, calc(100vh - 64px), center, center);
+    font-family: $fontFamily;
+    color: $fantascticRed;
+}

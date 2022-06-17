@@ -1,0 +1,103 @@
+.main-beerdetails {
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @include mobile {
+        width: auto;
+    }
+
+    .main-beerdetails-1 {
+        @include flex-row-center(auto, auto, space-between, flex-start);
+        padding: 1rem;
+
+        @include mobile {
+            flex-direction: column;
+        }
+        @include laptop {
+            flex-direction: column;
+        }
+
+        .main-beerdetails-card {
+            width: 20rem;
+            height: 23rem;
+            border-radius: 10px;
+
+            @include mobile {
+                width: auto;
+            }
+            @include laptop {
+                width: auto;
+            }
+            .beerdetailsCardImage {
+                width: inherit;
+                height: inherit;
+                border-radius: 10px;
+                box-shadow: 6px 6px 12px 0px lightgrey;
+                object-fit: contain;
+                padding: 1rem;
+            }
+        }
+
+        .main-beerdetails-info {
+            width: 60%;
+
+            @include mobile {
+                width: auto;
+            }
+            @include laptop {
+                width: auto;
+            }
+
+            .main-beerdetailsHeaders {
+                display: flex;
+                justify-content: flex-start;
+                gap: 10rem;
+                padding: 0.5rem;
+
+                @include mobile {
+                    gap: 0;
+                    flex-direction: column;
+                }
+                .beerdetailsHeaders {
+                    font-family: "Poppins";
+                    span {
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .main-beerdetailsDesc {
+                @include flex-column-center(auto, auto, flex-start, stretch);
+                padding: 0.5rem;
+            }
+        }
+
+        .favBtn {
+            background-color: $fantascticRed;
+            color: $silkWhite;
+
+            &:hover {
+                color: $fantascticRed;
+                background-color: $silkWhite;
+            }
+        }
+
+        .addedBtn {
+            color: $fantascticRed;
+            border: 0.1px solid $fantascticRed;
+        }
+    }
+}
+
+.main-gobackBtn {
+    .gobackBtn {
+        background-color: black;
+        color: $silkWhite;
+        &:hover {
+            background-color: $silkWhite;
+            color: black;
+        }
+    }
+}

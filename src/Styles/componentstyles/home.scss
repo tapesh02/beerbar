@@ -62,9 +62,11 @@
 
         .findBtn {
             margin-top: 2rem;
+            background-color: $silkWhite;
+            color: $fantascticRed;
             &:hover {
-                background-color: $fantascticRed;
                 color: $silkWhite;
+                background-color: $fantascticRed;
             }
         }
     }

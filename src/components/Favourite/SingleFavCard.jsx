@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { Grid, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Chip } from "@material-ui/core";
 
 import noImage from "../../assets/noImage.jpg";
 
-const SingleBeerCard = ({ beerData, handleShowBeerDetails, getBeerId }) => {
-    const { image_url, name, tagline, abv } = beerData;
+const SingleFavCard = ({ singleBeerDetails, removeFavourite }) => {
+    const { image_url, name, tagline, abv } = singleBeerDetails;
 
     return (
         <>
@@ -23,15 +22,8 @@ const SingleBeerCard = ({ beerData, handleShowBeerDetails, getBeerId }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button
-                            className="cardBtn"
-                            component={Link}
-                            to="beerdetails"
-                            onClick={() => {
-                                handleShowBeerDetails();
-                                getBeerId(beerData);
-                            }}>
-                            View
+                        <Button className="cardBtn" onClick={() => removeFavourite(singleBeerDetails)}>
+                            Remove
                         </Button>
                     </CardActions>
                 </Card>
@@ -40,4 +32,4 @@ const SingleBeerCard = ({ beerData, handleShowBeerDetails, getBeerId }) => {
     );
 };
 
-export default SingleBeerCard;
+export default SingleFavCard;
