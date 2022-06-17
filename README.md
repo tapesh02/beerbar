@@ -8,7 +8,7 @@ This git repository does not include any node module or packages. Hence when you
 
 1. run command `npm install`
 2. now run `npm start`
-   You can check the working demo of the wesbite here.
+   You can check the working demo of the wesbite [here](https://beerbar.web.app/).
 
 A snapshot of the landing/home page
 
