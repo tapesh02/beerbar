@@ -11,17 +11,11 @@ import { Container, Grid, Typography } from "@material-ui/core";
 const FindBeer = () => {
     const { searchText } = useContext(GlobalContext);
 
-    const [findBeer, setFindBeer] = useState([]);
+    const [findBeer, setFindBeer] = useState([10]);
     const [showBeerDetails, setShowBeerDetails] = useState(false);
-    const [beerId, setbeerId] = useState("");
 
     const handleShowBeerDetails = () => {
         setShowBeerDetails((current) => !current);
-    };
-
-    const getBeerId = (beerData) => {
-        const _id = [...beerId, beerData];
-        setbeerId(_id[0].id);
     };
 
     const filterData = (value) => {
@@ -48,16 +42,23 @@ const FindBeer = () => {
     return (
         <>
             {showBeerDetails ? (
-                <Outlet context={[beerId, setShowBeerDetails, setbeerId]} />
+                <Outlet context={[setShowBeerDetails]} />
             ) : (
                 <>
                     {findBeer?.filter(filterData).length > 0 ? (
                         <>
                             <SearchComp />
+
+                            {searchText && (
+                                <Typography color="inherit" className="notFoundtext" variant="h6">
+                                    Found {findBeer?.filter(filterData).length} results for {searchText}
+                                </Typography>
+                            )}
+
                             <Container style={{ marginTop: "2rem" }}>
                                 <Grid container spacing={1} alignItems="center">
                                     {findBeer?.filter(filterData).map((beerData) => {
-                                        return <SingleBeerCard beerData={beerData} handleShowBeerDetails={handleShowBeerDetails} getBeerId={getBeerId} key={beerData.id} />;
+                                        return <SingleBeerCard beerData={beerData} handleShowBeerDetails={handleShowBeerDetails} key={beerData.id} />;
                                     })}
                                 </Grid>
                             </Container>

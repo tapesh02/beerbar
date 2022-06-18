@@ -91,6 +91,35 @@
     }
 }
 
+.main-beerdetails-2 {
+    @include flex-column-center(auto, auto, space-between, flex-start);
+    padding: 1rem;
+    .main-other-details {
+        width: 100%;
+        .otherDetailsList {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            display: grid;
+            align-items: center;
+            justify-items: stretch;
+            align-content: center;
+            gap: 1rem;
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .chips {
+        margin: 0.2rem;
+    }
+    .subTitle {
+        font-weight: 500;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
 .main-gobackBtn {
     .gobackBtn {
         background-color: black;

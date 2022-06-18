@@ -5,8 +5,8 @@ import { Grid, Button, Card, CardActionArea, CardActions, CardContent, CardMedia
 
 import noImage from "../../assets/noImage.jpg";
 
-const SingleBeerCard = ({ beerData, handleShowBeerDetails, getBeerId }) => {
-    const { image_url, name, tagline, abv } = beerData;
+const SingleBeerCard = ({ beerData, handleShowBeerDetails }) => {
+    const { id, image_url, name, tagline, abv } = beerData;
 
     return (
         <>
@@ -23,14 +23,7 @@ const SingleBeerCard = ({ beerData, handleShowBeerDetails, getBeerId }) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button
-                            className="cardBtn"
-                            component={Link}
-                            to="beerdetails"
-                            onClick={() => {
-                                handleShowBeerDetails();
-                                getBeerId(beerData);
-                            }}>
+                        <Button className="cardBtn" component={Link} to={`beerdetails/${id}`} onClick={() => handleShowBeerDetails()}>
                             View
                         </Button>
                     </CardActions>

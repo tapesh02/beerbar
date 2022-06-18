@@ -10,8 +10,11 @@ const Logo = () => {
     };
     return (
         <>
-            <Typography variant="h4" className="logo" onClick={gotoHome}>
-                Beer<span className="bar-span">Bar</span>
+            <Typography variant="h4" className="logo">
+                Beer
+                <span className="bar-span" onClick={gotoHome}>
+                    Bar
+                </span>
             </Typography>
         </>
     );

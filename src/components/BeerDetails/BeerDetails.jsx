@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, useParams } from "react-router-dom";
 
 import { GlobalContext } from "../../context/Context";
 
@@ -8,15 +8,18 @@ import SingleBeerDetailCard from "./SingleBeerDetailCard";
 
 const BeerDetails = () => {
     const navigate = useNavigate();
-    const [beerId, setShowBeerDetails, setbeerId] = useOutletContext();
+    const { id } = useParams();
+
+    const [setShowBeerDetails] = useOutletContext();
+
     const { favourite, setFavourite } = useContext(GlobalContext);
+
     const [beerDetails, setBeerDetails] = useState([]);
-    const [ifExist, setIfExist] = useState(false);
+    const [ifItemExist, setIfitemExist] = useState(false);
 
     const goToFindBeer = () => {
         setShowBeerDetails(!setShowBeerDetails);
-        navigate("/findbeer");
-        setbeerId("");
+        navigate("/findbeer", { replace: true });
     };
 
     const addToFavourite = (singleBeerDetails) => {
@@ -26,7 +29,7 @@ const BeerDetails = () => {
 
     useEffect(() => {
         const getBeerDetails = async () => {
-            const beerDetailsApi = `https://api.punkapi.com/v2/beers/${beerId}`;
+            const beerDetailsApi = `https://api.punkapi.com/v2/beers/${id}`;
             try {
                 const response = await fetch(beerDetailsApi);
                 const jsonResponse = await response.json();
@@ -37,7 +40,7 @@ const BeerDetails = () => {
             }
         };
         getBeerDetails();
-    }, [beerId]);
+    }, [id]);
 
     return (
         <>
@@ -52,7 +55,13 @@ const BeerDetails = () => {
             {beerDetails?.map((singleBeerDetails) => {
                 return (
                     <>
-                        <SingleBeerDetailCard singleBeerDetails={singleBeerDetails} key={singleBeerDetails.id} addToFavourite={addToFavourite} setIfExist={setIfExist} ifExist={ifExist} />
+                        <SingleBeerDetailCard
+                            singleBeerDetails={singleBeerDetails}
+                            key={singleBeerDetails.id}
+                            addToFavourite={addToFavourite}
+                            setIfitemExist={setIfitemExist}
+                            ifItemExist={ifItemExist}
+                        />
                     </>
                 );
             })}
