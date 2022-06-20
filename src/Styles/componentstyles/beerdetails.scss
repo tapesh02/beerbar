@@ -5,7 +5,7 @@
     margin-bottom: 1rem;
 
     @include mobile {
-        width: 100%;
+        width: auto;
     }
 
     .main-beerdetails-1 {
@@ -25,10 +25,13 @@
             border-radius: 10px;
 
             @include mobile {
-                width: auto;
+                width: 98%;
+                margin: auto;
             }
+
             @include laptop {
-                width: auto;
+                width: 98%;
+                margin: auto;
             }
             .beerdetailsCardImage {
                 width: inherit;
