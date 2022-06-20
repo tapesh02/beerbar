@@ -11,7 +11,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 const FindBeer = () => {
     const { searchText } = useContext(GlobalContext);
 
-    const [findBeer, setFindBeer] = useState([10]);
+    const [findBeer, setFindBeer] = useState([]);
     const [showBeerDetails, setShowBeerDetails] = useState(false);
 
     const handleShowBeerDetails = () => {
