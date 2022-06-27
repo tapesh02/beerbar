@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useOutletContext, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { GlobalContext } from "../../context/Context";
 
@@ -10,9 +10,9 @@ const BeerDetails = () => {
     const navigate = useNavigate();
     const { id } = useParams();
 
-    const [setShowBeerDetails] = useOutletContext();
+    // const [setShowBeerDetails] = useOutletContext();
 
-    const { favourite, setFavourite } = useContext(GlobalContext);
+    const { favourite, setFavourite, setShowBeerDetails } = useContext(GlobalContext);
 
     const [beerDetails, setBeerDetails] = useState([]);
     const [ifItemExist, setIfitemExist] = useState(false);

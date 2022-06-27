@@ -9,14 +9,10 @@ import SingleBeerCard from "./SingleBeerCard";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 const FindBeer = () => {
-    const { searchText } = useContext(GlobalContext);
+    const { searchText, showBeerDetails, handleShowBeerDetails } = useContext(GlobalContext);
 
     const [findBeer, setFindBeer] = useState([]);
-    const [showBeerDetails, setShowBeerDetails] = useState(false);
-
-    const handleShowBeerDetails = () => {
-        setShowBeerDetails((current) => !current);
-    };
+    // const [showBeerDetails, setShowBeerDetails] = useState(false);
 
     const filterData = (value) => {
         if (searchText === "" || value.name?.toLowerCase().includes(searchText?.toLowerCase())) {
@@ -42,7 +38,7 @@ const FindBeer = () => {
     return (
         <>
             {showBeerDetails ? (
-                <Outlet context={[setShowBeerDetails]} />
+                <Outlet />
             ) : (
                 <>
                     {findBeer?.filter(filterData).length > 0 ? (
@@ -58,7 +54,13 @@ const FindBeer = () => {
                             <Container style={{ marginTop: "2rem" }}>
                                 <Grid container spacing={1} alignItems="center">
                                     {findBeer?.filter(filterData).map((beerData) => {
-                                        return <SingleBeerCard beerData={beerData} handleShowBeerDetails={handleShowBeerDetails} key={beerData.id} />;
+                                        return (
+                                            <SingleBeerCard
+                                                beerData={beerData}
+                                                handleShowBeerDetails={handleShowBeerDetails}
+                                                key={beerData.id}
+                                            />
+                                        );
                                     })}
                                 </Grid>
                             </Container>

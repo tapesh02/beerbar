@@ -4,3 +4,9 @@
     font-family: $fontFamily;
     color: $fantascticRed;
 }
+
+.favBtnclass {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

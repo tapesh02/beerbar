@@ -6,7 +6,25 @@ import { Box, Paper, CardMedia, Typography, Button, Chip } from "@material-ui/co
 const SingleBeerDetailCard = ({ singleBeerDetails, addToFavourite, setIfitemExist, ifItemExist }) => {
     const { favourite } = useContext(GlobalContext);
 
-    const { id, image_url, name, description, abv, first_brewed, ibu, target_fg, target_og, ebc, srm, ph, volume, boil_volume, method, food_pairing, brewers_tips } = singleBeerDetails;
+    const {
+        id,
+        image_url,
+        name,
+        description,
+        abv,
+        first_brewed,
+        ibu,
+        target_fg,
+        target_og,
+        ebc,
+        srm,
+        ph,
+        volume,
+        boil_volume,
+        method,
+        food_pairing,
+        brewers_tips,
+    } = singleBeerDetails;
 
     const checkIfItemExsist = () => {
         setIfitemExist(false);
@@ -22,7 +40,13 @@ const SingleBeerDetailCard = ({ singleBeerDetails, addToFavourite, setIfitemExis
             <Box className="main-beerdetails">
                 <Paper className="main-beerdetails-1">
                     <Box className="main-beerdetails-card">
-                        <CardMedia component="img" className="beerdetailsCardImage" image={image_url} alt="detailsThumb" title={name} />
+                        <CardMedia
+                            component="img"
+                            className="beerdetailsCardImage"
+                            image={image_url}
+                            alt="detailsThumb"
+                            title={name}
+                        />
                     </Box>
                     <Box className="main-beerdetails-info">
                         <Box className="main-beerdetailsHeaders">
@@ -48,7 +72,10 @@ const SingleBeerDetailCard = ({ singleBeerDetails, addToFavourite, setIfitemExis
                             Already added
                         </Button>
                     ) : (
-                        <Button variant="contained" onClick={() => addToFavourite(singleBeerDetails)} className="favBtn">
+                        <Button
+                            variant="contained"
+                            onClick={() => addToFavourite(singleBeerDetails)}
+                            className="favBtn">
                             Favourite
                         </Button>
                     )}
@@ -116,12 +143,23 @@ const SingleBeerDetailCard = ({ singleBeerDetails, addToFavourite, setIfitemExis
                             Mash temperature{" "}
                         </Typography>
                         {method.mash_temp.map((method, i) => (
-                            <Chip label={`${method.temp.value}  ${method.temp.unit}`} variant="outlined" color="secondary" key={i} className="chips" />
+                            <Chip
+                                label={`${method.temp.value}  ${method.temp.unit}`}
+                                variant="outlined"
+                                color="secondary"
+                                key={i}
+                                className="chips"
+                            />
                         ))}
                         <Typography variant="subtitle1" className="subTitle">
                             Fermentation{" "}
                         </Typography>
-                        <Chip label={`${method.fermentation.temp.value}  ${method.fermentation.temp.unit}`} variant="outlined" color="secondary" className="chips" />
+                        <Chip
+                            label={`${method.fermentation.temp.value}  ${method.fermentation.temp.unit}`}
+                            variant="outlined"
+                            color="secondary"
+                            className="chips"
+                        />
                         <Typography variant="subtitle1" className="subTitle">
                             Twist{" "}
                         </Typography>

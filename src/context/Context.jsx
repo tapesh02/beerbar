@@ -5,6 +5,7 @@ export const GlobalContext = createContext();
 const Context = ({ children }) => {
     const [searchText, setSearchText] = useState("");
     const [favourite, setFavourite] = useState([]);
+    const [showBeerDetails, setShowBeerDetails] = useState(false);
 
     const handleSearch = (event) => {
         if (searchText !== "") {
@@ -12,6 +13,10 @@ const Context = ({ children }) => {
         } else if (searchText !== null) {
             setSearchText(event.target.value);
         }
+    };
+
+    const handleShowBeerDetails = () => {
+        setShowBeerDetails((current) => !current);
     };
 
     const totalFavItems = favourite.length;
@@ -24,6 +29,9 @@ const Context = ({ children }) => {
                 favourite,
                 setFavourite,
                 totalFavItems,
+                showBeerDetails,
+                setShowBeerDetails,
+                handleShowBeerDetails,
             }}>
             {children}
         </GlobalContext.Provider>
