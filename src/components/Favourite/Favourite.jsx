@@ -1,8 +1,6 @@
 import { Container, Grid, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
-
 import { GlobalContext } from "../../context/Context";
 import SingleFavCard from "../Favourite/SingleFavCard";
 

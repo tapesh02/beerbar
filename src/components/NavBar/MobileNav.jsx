@@ -4,9 +4,35 @@ import { GlobalContext } from "../../context/Context";
 
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { AppBar, Backdrop, CssBaseline, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, Box, Badge } from "@material-ui/core";
+import {
+    AppBar,
+    Backdrop,
+    CssBaseline,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Toolbar,
+    Typography,
+    Box,
+    Badge,
+} from "@material-ui/core";
 
-import { Home, MenuOpen, ListAlt, AccountCircle, ChevronRight, ChevronLeft, Twitter, Facebook, LinkedIn, Copyright, ExitToApp, PersonAdd } from "@material-ui/icons";
+import {
+    Home,
+    MenuOpen,
+    ListAlt,
+    AccountCircle,
+    ChevronRight,
+    ChevronLeft,
+    Twitter,
+    Facebook,
+    LinkedIn,
+    Copyright,
+    PersonAdd,
+} from "@material-ui/icons";
 
 import Logo from "../Logo/Logo";
 
@@ -115,7 +141,12 @@ const MobileNav = () => {
                                 <Logo />
                             </Link>
                         </Typography>
-                        <IconButton color="inherit" aria-label="open drawer" edge="end" onClick={handleDrawerOpen} className={clsx(open && classes.hide)}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="end"
+                            onClick={handleDrawerOpen}
+                            className={clsx(open && classes.hide)}>
                             <MenuOpen fontSize="large" />
                         </IconButton>
                     </Toolbar>
@@ -130,7 +161,13 @@ const MobileNav = () => {
                             paper: classes.drawerPaper,
                         }}>
                         <div className={classes.drawerHeader}>
-                            <IconButton onClick={handleDrawerClose}>{theme.direction === "rtl" ? <ChevronLeft /> : <ChevronRight fontSize="large" style={{ color: "white" }} />}</IconButton>
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === "rtl" ? (
+                                    <ChevronLeft />
+                                ) : (
+                                    <ChevronRight fontSize="large" style={{ color: "white" }} />
+                                )}
+                            </IconButton>
                         </div>
                         <Box className={classes.mobileLogo}>
                             <Logo />
@@ -148,7 +185,9 @@ const MobileNav = () => {
                                 <ListItemIcon>
                                     <ListAlt fontSize="large" style={{ color: "white" }} />
                                 </ListItemIcon>
-                                <NavLink to="/findbeer" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
+                                <NavLink
+                                    to="/findbeer"
+                                    className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
                                     <ListItemText primary="Find Beer" />
                                 </NavLink>
                             </ListItem>
@@ -163,7 +202,9 @@ const MobileNav = () => {
                                         vertical: "top",
                                         horizontal: "right",
                                     }}>
-                                    <NavLink to="/favourite" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
+                                    <NavLink
+                                        to="/favourite"
+                                        className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
                                         <ListItemText primary="Favourite" />
                                     </NavLink>
                                 </Badge>
@@ -172,7 +213,9 @@ const MobileNav = () => {
                                 <ListItemIcon>
                                     <AccountCircle fontSize="large" style={{ color: "white" }} />
                                 </ListItemIcon>
-                                <NavLink to="/about" className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
+                                <NavLink
+                                    to="/about"
+                                    className={(navlink) => (navlink.isActive ? "active" : "inactive")}>
                                     <ListItemText primary="About" />
                                 </NavLink>
                             </ListItem>
@@ -183,7 +226,10 @@ const MobileNav = () => {
                                     <Twitter className={classes.menuicons} />
                                 </ListItemIcon>
                             </ListItemLink>
-                            <ListItemLink href="https://www.linkedin.com/in/tapesh-patel-276a65a4/" target="_blank" rel="noopener noreferrer">
+                            <ListItemLink
+                                href="https://www.linkedin.com/in/tapesh-patel-276a65a4/"
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <ListItemIcon>
                                     <LinkedIn className={classes.menuicons} />
                                 </ListItemIcon>
@@ -194,9 +240,19 @@ const MobileNav = () => {
                                 </ListItemIcon>
                             </ListItemLink>
                         </Box>
-                        <div style={{ display: "inline-flex", gap: "10px", alignItems: "center", justifyContent: "center", padding: "inherit" }}>
+                        <div
+                            style={{
+                                display: "inline-flex",
+                                gap: "10px",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                padding: "inherit",
+                            }}>
                             <Copyright className={classes.menuicons} />
-                            <p style={{ color: "white", letterSpacing: "1.2px", padding: "0%", margin: "0%" }}> Copyright reserved by Tapesh Patel</p>
+                            <p style={{ color: "white", letterSpacing: "1.2px", padding: "0%", margin: "0%" }}>
+                                {" "}
+                                Copyright reserved by Tapesh Patel
+                            </p>
                         </div>
                     </Drawer>
                 </Backdrop>
